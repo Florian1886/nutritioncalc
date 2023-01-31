@@ -19,5 +19,8 @@ public class Food {
     private int id;
     private String name;
     private double calories;
+    private double protein;
+    private double fat;
+    private double carbohydrates;
 
 }
