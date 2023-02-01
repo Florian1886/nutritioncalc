@@ -16,7 +16,7 @@ public class Food {
 
     @Id
     @GeneratedValue
-    private int id;
+    private int idF;
     private String name;
     private double calories;
     private double protein;

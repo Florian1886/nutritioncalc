@@ -9,9 +9,4 @@ public class DailyIntakeService {
 
     DailyIntakeRepository dailyIntakeRepository;
 
-    //TO DO
-    public DailyIntake addFoodToDaily(DailyIntake dailyIntake){
-
-        return dailyIntakeRepository.save(dailyIntake);
-    }
 }
