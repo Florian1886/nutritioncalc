@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            max-width: 1000px;
+            width: 100%;
+        }
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+ <section>
+      <p>Daily Intake</p>
+      <table>
+          <thead>
+          <tr>
+              <td>ID</td>
+              <td>Date</td>
+              <td>Calories</td>
+              <td>Protein</td>
+              <td>Fat</td>
+              <td>Carbs</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="dailyintake: ${allDailyIntakes}" th:object="${dailyintake}">
+              <td th:text="*{idDI}"></td>
+              <td th:text="*{date}"></td>
+              <td th:text="*{calories}"></td>
+              <td th:text="*{protein}"></td>
+              <td th:text="*{fat}"></td>
+              <td th:text="*{carbohydrates}"></td>
+          </tr>
+          </tbody>
+      </table>
+  </section>
+ <a href="/">Back</a>
+</body>
+</html>

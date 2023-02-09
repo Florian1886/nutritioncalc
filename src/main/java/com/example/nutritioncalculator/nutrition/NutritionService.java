@@ -3,19 +3,14 @@ package com.example.nutritioncalculator.nutrition;
 
 import com.example.nutritioncalculator.dailyintake.DailyIntake;
 import com.example.nutritioncalculator.dailyintake.DailyIntakeRepository;
-import com.example.nutritioncalculator.dailyintake.dto.DailyIntakeDto;
 import com.example.nutritioncalculator.food.Food;
-import com.example.nutritioncalculator.food.FoodRepository;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 @AllArgsConstructor
 public class NutritionService {
 
