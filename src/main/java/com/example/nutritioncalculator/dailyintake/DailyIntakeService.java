@@ -1,15 +1,15 @@
 package com.example.nutritioncalculator.dailyintake;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class DailyIntakeService {
 
-    DailyIntakeRepository dailyIntakeRepository;
+    private final DailyIntakeRepository dailyIntakeRepository;
 
     public List<DailyIntake> getAllDailyIntake(){
         return dailyIntakeRepository.findAll();

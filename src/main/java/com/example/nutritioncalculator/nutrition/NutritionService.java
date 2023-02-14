@@ -4,18 +4,18 @@ package com.example.nutritioncalculator.nutrition;
 import com.example.nutritioncalculator.dailyintake.DailyIntake;
 import com.example.nutritioncalculator.dailyintake.DailyIntakeRepository;
 import com.example.nutritioncalculator.food.Food;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class NutritionService {
 
 
-    private DailyIntakeRepository dailyIntakeRepository;
+    private final DailyIntakeRepository dailyIntakeRepository;
 
     public DailyIntake saveNutritionIntoDailyIntake(List<Food> foods){
         DailyIntake dailyIntakeHelper = new DailyIntake();

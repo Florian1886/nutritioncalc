@@ -2,6 +2,7 @@ package com.example.nutritioncalculator.dailyintake;
 
 
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,15 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 @Controller
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class DailyIntakeController {
 
     private final DailyIntakeService dailyIntakeService;
 
     @GetMapping("/getDailyIntake")
-    public String/*List<DailyIntake>*/ getDailyIntakes(Model model){
+    public String getDailyIntakes(Model model){
 
-        /*List<DailyIntake> list = dailyIntakeService.getAllDailyIntake();*/
         model.addAttribute("allDailyIntakes", dailyIntakeService.getAllDailyIntake());
         return "test";
     }
