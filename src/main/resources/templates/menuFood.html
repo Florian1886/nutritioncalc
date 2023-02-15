@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/addToDailyIntake">
+    <label>
+        <select name="nameFood" class="form-control"  th:field="*{foods}">
+            <option th:each="food: ${foods}"
+                    th:value="${food.name}" th:text="${food.name}"></option>
+        </select>
+    </label>
+    <label>
+        Weight in grams
+        <input name="weight" type="number" step="0.01">
+    </label>
+    <button type="submit">Choose</button>
+</form>
+
+
+<a href="/menuDailyIntake">Back</a>
+</body>
+</html>

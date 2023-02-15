@@ -39,8 +39,10 @@ public class FoodService {
 
     public Food updateFood(Food food) {
         Food existingFood = foodRepository.findById(food.getIdF()).orElse(null);
+        assert existingFood != null;
         existingFood.setName(food.getName());
         existingFood.setCalories(food.getCalories());
         return foodRepository.save(existingFood);
     }
+
 }

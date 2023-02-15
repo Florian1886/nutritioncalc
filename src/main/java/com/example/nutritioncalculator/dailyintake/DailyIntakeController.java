@@ -15,12 +15,26 @@ public class DailyIntakeController {
 
     private final DailyIntakeService dailyIntakeService;
 
-    @GetMapping("/getDailyIntake")
+
+    @GetMapping("/menuDailyIntake")
+    public String menuDailyIntakes(Model model){
+
+        return "menuDailyIntake";
+    }
+    @GetMapping("/showAllDailyIntake")
     public String getDailyIntakes(Model model){
 
         model.addAttribute("allDailyIntakes", dailyIntakeService.getAllDailyIntake());
-        return "test";
+        return "showAllDailyIntake";
     }
+
+    @GetMapping("/showTodaysDailyIntake")
+    public String getTodaysDailyIntakes(Model model){
+
+        model.addAttribute("todayDailyIntake", dailyIntakeService.getTodayDailyIntake());
+        return "showTodaysDailyIntake";
+    }
+
 
 
 }

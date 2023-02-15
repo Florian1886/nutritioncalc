@@ -20,4 +20,12 @@ public class DailyIntake {
     private double protein;
     private double fat;
     private double carbohydrates;
+
+    public DailyIntake(LocalDate date, double calories, double protein, double fat, double carbohydrates) {
+        this.date = date;
+        this.calories = calories;
+        this.protein = protein;
+        this.fat = fat;
+        this.carbohydrates = carbohydrates;
+    }
 }

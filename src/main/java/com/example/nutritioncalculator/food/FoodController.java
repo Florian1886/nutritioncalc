@@ -2,11 +2,13 @@ package com.example.nutritioncalculator.food;
 
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequiredArgsConstructor
 public class FoodController {
 
@@ -46,5 +48,13 @@ public class FoodController {
     public String deleteFood(@PathVariable int id) {
         return foodService.deleteFood(id);
     }
+
+    @GetMapping("/menuFood")
+    public String showAllFood(Model model){
+        model.addAttribute("foods", foodService.getFoods());
+        return "menuFood";
+    }
+
+
 
 }
