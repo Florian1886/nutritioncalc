@@ -1,38 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        table {
-            border: 1px solid black;
-            border-collapse: collapse;
-            max-width: 1000px;
-            width: 100%;
-        }
-        td {
-            border: 1px solid black;
-        }
-    </style>
+    <title>Test</title>
 </head>
 <body>
-<section>
-    <p>Today's Food</p>
-    <table>
-        <thead>
-        <tr>
-            <td>Nazwa</td>
-            <td>Waga</td>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:object="${food}">
-            <td th:text="*{name}"></td>
-            <td th:text="*{weight}"></td>
-        </tr>
-        </tbody>
-    </table>
-</section>
-<a href="/menuDailyIntake">Back</a>
+<p th:unless="${dailyIntake}">Something went wrong, type again</p>
+    <div th:if="${dailyIntake}">
+        <p>Saved!</p>
+    </div>
+<a href="/menuFood">Back</a>
 </body>
 </html>

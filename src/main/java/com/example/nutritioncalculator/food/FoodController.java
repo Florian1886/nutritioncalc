@@ -14,10 +14,10 @@ public class FoodController {
 
     private final FoodService foodService;
 
-    @PostMapping("/addFood")
+    /*@PostMapping("/addFood")
     public Food addFood(@RequestBody Food food) {
         return foodService.saveFood(food);
-    }
+    }*/
 
     @PostMapping("/addFoods")
     public List<Food> addFoods(@RequestBody List<Food> foods) {
@@ -55,6 +55,16 @@ public class FoodController {
         return "menuFood";
     }
 
+    @PostMapping("/saveFood")
+    public String addFood(String nameFood, Double calories, Double carbohydrates, Double fat, Double protein, Model model){
+        foodService.saveFood(new Food(nameFood, calories, protein, fat, carbohydrates));
+        return "redirect:/menuFood";
+    }
+
+    @GetMapping("/addNewFood")
+    public String showAddNewFood(){
+        return "addNewFood";
+    }
 
 
 }

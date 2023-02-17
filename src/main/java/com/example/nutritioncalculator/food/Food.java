@@ -23,4 +23,11 @@ public class Food {
     private double fat;
     private double carbohydrates;
 
+    public Food(String name, double calories, double protein, double fat, double carbohydrates) {
+        this.name = name;
+        this.calories = calories;
+        this.protein = protein;
+        this.fat = fat;
+        this.carbohydrates = carbohydrates;
+    }
 }

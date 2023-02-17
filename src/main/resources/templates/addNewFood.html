@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Add food</h1>
+<form method="post" action="/saveFood">
+    <label>
+        Name:
+        <input name="nameFood" type="text">
+    </label>
+    <label>
+        Calories per 100g:
+        <input name="calories" type="number" step="0.01">
+    </label>
+    <label>
+        Carbohydrates per 100g:
+        <input name="carbohydrates" type="number" step="0.01">
+    </label>
+    <label>
+        Fat per 100g:
+        <input name="fat" type="number" step="0.01">
+    </label>
+    <label>
+        Protein per 100g:
+        <input name="protein" type="number" step="0.01">
+    </label>
+    <button type="submit">Add food</button>
+</form>
+<a href="/menuFood">Back</a>
+</body>
+</html>
