@@ -17,6 +17,6 @@ public class DailyIntakeService {
     }
 
     public DailyIntake getTodayDailyIntake(){
-        return dailyIntakeRepository.findByDate(LocalDate.now()).orElse(null);
+        return dailyIntakeRepository.findByDate(LocalDate.now()).orElseThrow(RuntimeException::new);
     }
 }
